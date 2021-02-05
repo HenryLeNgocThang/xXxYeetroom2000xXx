@@ -3,23 +3,25 @@
 }
 
 <h2>Index</h2>
+<a asp-action="Create">Create New</a>
 
 @{
     foreach (Post post in ViewBag.Posts)
     {
         <div>
             <div style="text-align: right; margin-bottom: 0px;">
-                <p> @post.Verfasser sagte am @post.Datum </p>
-                @*@{ foreach (var Benutzer in Model.AlleBenutzer)
-            {
-                if (post.Benutzer_ID == Benutzer.ID)
-                {
-                    <p>@Benutzer.Name sagte am @post.Datum.Date:</p>
+                @post.Verfasser sagte am @post.Datum
+                @{ if (post.Link != "")
+                    {
+                        <img src="@post.Link" />
+                    }
+                    if (post.Eintrag != "")
+                    {
+                        <p> @post.Eintrag </p>
+                    }
                 }
-            }
-        }*@
+
             </div>
-            <h4 style="border: 1px solid black; margin-bottom: 0px;"> @post.Eintrag </h4>
             @*@foreach (var Kommentar in Model.AlleKommentare)
                 {
                     if (post.ID == Kommentar.Post_ID)

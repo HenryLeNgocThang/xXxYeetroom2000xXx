@@ -11,5 +11,6 @@ namespace xXxYeetroom2000xXx.Models
         public string Verfasser { get; set; }
         public DateTime Datum { get; set; }
         public string Eintrag { get; set; }
+        public string Link { get; set; }
     }
 }

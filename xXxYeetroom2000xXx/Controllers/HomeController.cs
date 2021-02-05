@@ -31,9 +31,25 @@ namespace xXxYeetroom2000xXx.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Create()
         {
             return View();
+        }
+
+        // POST: Movies/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price")] Post post)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Add(post);
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(post);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
