@@ -10,7 +10,7 @@ namespace xXxYeetroom2000xXx.Data
         {
         }
 
-        public DbSet<Post> Forumeinträge { get; set; }
+        public DbSet<Post> Post { get; set; }
         public DbSet<Kommentar> Kommentar { get; set; }
     }
 }

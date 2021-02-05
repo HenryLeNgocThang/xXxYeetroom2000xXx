@@ -69,7 +69,6 @@ C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Ra
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\Yeetroom2000\Index.cshtml.g.cs
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\xXxYeetroom2000xXx.RazorTargetAssemblyInfo.cache

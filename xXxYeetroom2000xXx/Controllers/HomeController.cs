@@ -25,7 +25,7 @@ namespace xXxYeetroom2000xXx.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Posts = _db.Forumeinträge.ToList<Post>();
+            ViewBag.Posts = _db.Post.ToList<Post>();
             ViewBag.Kommentare = _db.Kommentar.ToList<Kommentar>();
 
             return View();
