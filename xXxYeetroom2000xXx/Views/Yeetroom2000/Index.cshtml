@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@{ 
+    foreach (var post in Model.AllePosts)
+    {
+    <div>
+        <div style="text-align: right; margin-bottom: 0px;">
+            @foreach (Post item in ViewBag.Posts)
+            {
+                <p> @item.ID @item.Verfasser @item.Eintrag </p>
+            }
+            @*@{ foreach (var Benutzer in Model.AlleBenutzer)
+                {
+                    if (post.Benutzer_ID == Benutzer.ID)
+                    {
+                        <p>@Benutzer.Name sagte am @post.Datum.Date:</p>
+                    }
+                }
+            }*@ 
+        </div>
+        <h4 style="border: 1px solid black; margin-bottom: 0px;"> @post.Eintrag </h4>
+        @*@foreach (var Kommentar in Model.AlleKommentare)
+        {
+            if (post.ID == Kommentar.Post_ID)
+            {
+                foreach (var Benutzer in Model.AlleBenutzer)
+                {
+                    if (Benutzer.ID == Kommentar.Benutzer_ID)
+                    {
+                        <p style="border: 1px solid black; font-size: 10px;"> @Benutzer.Name: @Kommentar.Eintrag </p>
+                    }
+                }
+            }
+        }*@
+    </div>
+    }
+}
