@@ -3,12 +3,34 @@
 }
 
 <h2>Index</h2>
-<a asp-action="Create">Create New</a>
+<a asp-action="CreatePost">Create New</a>
+
 
 @{
     foreach (Post post in ViewBag.Posts)
     {
-        <div>
+    <div style="border-collapse: collapse; margin-bottom: 10px;">
+        <div style="border: 1px solid black;">
+            <p style="font-size: 20px; font-weight: bold;"> @post.Verfasser schrieb am @post.Datum: </p>
+            <p style="font-size: 20px; font-weight: bold;"> @post.Eintrag </p>
+            <div style="border: 1px solid black;">
+                @foreach (Kommentar kommentar in ViewBag.Kommentare)
+                {
+                    if (kommentar.Post_ID == post.ID)
+                    {
+                        <p> @kommentar.Verfasser schreib: @kommentar.Eintrag </p>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    }
+}
+
+@*@{
+    foreach (Post post in ViewBag.Posts)
+    {
+        <div id="@post.ID">
             <div style="text-align: right; margin-bottom: 0px;">
                 @post.Verfasser sagte am @post.Datum
                 @{ if (post.Link != "")
@@ -22,19 +44,20 @@
                 }
 
             </div>
-            @*@foreach (var Kommentar in Model.AlleKommentare)
+            @foreach (var Kommentar in Model.AlleKommentare)
+            {
+                if (post.ID == Kommentar.Post_ID)
                 {
-                    if (post.ID == Kommentar.Post_ID)
+                    foreach (var Benutzer in Model.AlleBenutzer)
                     {
-                        foreach (var Benutzer in Model.AlleBenutzer)
+                        if (Benutzer.ID == Kommentar.Benutzer_ID)
                         {
-                            if (Benutzer.ID == Kommentar.Benutzer_ID)
-                            {
-                                <p style="border: 1px solid black; font-size: 10px;"> @Benutzer.Name: @Kommentar.Eintrag </p>
-                            }
+                            <p style="border: 1px solid black; font-size: 10px;"> @Benutzer.Name: @Kommentar.Eintrag </p>
                         }
                     }
-                }*@
+                }
+            }
         </div>
-    }
+
+    }*@
 }
