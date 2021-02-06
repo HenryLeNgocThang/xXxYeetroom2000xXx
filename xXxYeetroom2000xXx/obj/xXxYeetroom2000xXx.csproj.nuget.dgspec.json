@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj": {}
+    "D:\\XAMPP\\htdocs\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj": {}
   },
   "projects": {
-    "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj": {
+    "D:\\XAMPP\\htdocs\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
+        "projectUniqueName": "D:\\XAMPP\\htdocs\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
         "projectName": "xXxYeetroom2000xXx",
-        "projectPath": "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
-        "packagesPath": "C:\\Users\\damba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\obj\\",
+        "projectPath": "D:\\XAMPP\\htdocs\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
+        "packagesPath": "C:\\Users\\spong\\.nuget\\packages\\",
+        "outputPath": "D:\\XAMPP\\htdocs\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\damba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\spong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
