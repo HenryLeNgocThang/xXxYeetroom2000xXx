@@ -8,33 +8,21 @@
 @{
     foreach (Post post in ViewBag.Posts)
     {
-        <div>
-            <div style="text-align: right; margin-bottom: 0px;">
-                @post.Verfasser sagte am @post.Datum
-                @{ if (post.Link != "")
+    <div style="border-collapse: collapse; margin-bottom: 10px;">
+        <div style="border: 1px solid black;">
+            <p style="font-size: 20px; font-weight: bold;"> @post.Verfasser schrieb am @post.Datum: </p>
+            <p style="font-size: 20px; font-weight: bold;"> @post.Eintrag </p>
+            <div style="border: 1px solid black;">
+                @foreach (Kommentar kommentar in ViewBag.Kommentare)
+                {
+                    if (kommentar.Post_ID == post.ID)
                     {
-                        <img src="@post.Link" />
-                    }
-                    if (post.Eintrag != "")
-                    {
-                        <p> @post.Eintrag </p>
+                        <p> @kommentar.Verfasser schreib: @kommentar.Eintrag </p>
                     }
                 }
-
             </div>
-            @*@foreach (var Kommentar in Model.AlleKommentare)
-                {
-                    if (post.ID == Kommentar.Post_ID)
-                    {
-                        foreach (var Benutzer in Model.AlleBenutzer)
-                        {
-                            if (Benutzer.ID == Kommentar.Benutzer_ID)
-                            {
-                                <p style="border: 1px solid black; font-size: 10px;"> @Benutzer.Name: @Kommentar.Eintrag </p>
-                            }
-                        }
-                    }
-                }*@
+            <a asp-action="CreateKommentar" asp-route-id="@post.ID">Kommentar schreiben</a>
         </div>
+    </div>
     }
 }
