@@ -15,4 +15,19 @@
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- extends watching group to include *.js files -->
+    <Watch Include="wwwroot\js\**\*.js;**\*.scss" Exclude="wwwroot\dist;node_modules\**\*;**\*.js.map;obj\**\*;bin\**\*" />
+  </ItemGroup>
+
+  <Target Name="Create bundles" BeforeTargets="BeforeBuild">
+    <Exec Command="npm run build" />
+  </Target>
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties package_1json__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+
 </Project>

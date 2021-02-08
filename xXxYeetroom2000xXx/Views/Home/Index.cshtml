@@ -2,28 +2,39 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-<a asp-action="CreatePost">Neuen Post erstellen</a>
-
+<h1>xXxYeetroom2000HDxXx</h1>
+<a asp-action="Create">Create New</a>
 
 @{
     foreach (Post post in ViewBag.Posts)
     {
-    <div style="border-collapse: collapse; margin-bottom: 10px;">
-        <div style="border: 1px solid black;">
-            <p style="font-size: 20px; font-weight: bold;"> @post.Verfasser schrieb am @post.Datum: </p>
-            <p style="font-size: 20px; font-weight: bold;"> @post.Eintrag </p>
-            <div style="border: 1px solid black;">
-                @foreach (Kommentar kommentar in ViewBag.Kommentare)
-                {
-                    if (kommentar.Post_ID == post.ID)
+        <div>
+            <div style="text-align: right; margin-bottom: 0px;">
+                @post.Verfasser sagte am @post.Datum
+                @{ if (post.Link != "")
                     {
-                        <p> @kommentar.Verfasser schreib: @kommentar.Eintrag </p>
+                        <img src="@post.Link" />
+                    }
+                    if (post.Eintrag != "")
+                    {
+                        <p> @post.Eintrag </p>
                     }
                 }
+
             </div>
-            <a asp-action="CreateKommentar" asp-route-id="@post.ID">Kommentar schreiben</a>
+            @*@foreach (var Kommentar in Model.AlleKommentare)
+                {
+                    if (post.ID == Kommentar.Post_ID)
+                    {
+                        foreach (var Benutzer in Model.AlleBenutzer)
+                        {
+                            if (Benutzer.ID == Kommentar.Benutzer_ID)
+                            {
+                                <p style="border: 1px solid black; font-size: 10px;"> @Benutzer.Name: @Kommentar.Eintrag </p>
+                            }
+                        }
+                    }
+                }*@
         </div>
-    </div>
     }
 }
