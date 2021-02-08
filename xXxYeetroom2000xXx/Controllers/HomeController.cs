@@ -25,7 +25,7 @@ namespace xXxYeetroom2000xXx.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Posts = _db.Post.ToList<Post>();
+            ViewBag.Posts = sortedPosts(_db.Post.ToList<Post>());
             ViewBag.Kommentare = _db.Kommentar.ToList<Kommentar>();
 
             return View();
@@ -88,6 +88,26 @@ namespace xXxYeetroom2000xXx.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private List<Post> sortedPosts(List<Post> posts)
+        {
+            var sortedPosts = posts.ToList();
+
+            for (int i = 0; i < posts.Count; i++)
+            {
+                for (int j = 0; j < posts.Count - 1; j++)
+                {
+                    if (sortedPosts[j].Datum < sortedPosts[j + 1].Datum)
+                    {
+                        var tempPost = sortedPosts[j + 1];
+                        sortedPosts[j + 1] = sortedPosts[j];
+                        sortedPosts[j] = tempPost;
+                    }
+                }
+            }
+
+            return sortedPosts;
         }
     }
 }

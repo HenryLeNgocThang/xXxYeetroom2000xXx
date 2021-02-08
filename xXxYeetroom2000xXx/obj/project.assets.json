@@ -138,7 +138,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "3.1.10"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
+          "lib/netstandard2.0/_._": {}
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -6200,20 +6200,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\damba\\.nuget\\packages\\": {}
+    "C:\\Users\\rsmets\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
+      "projectUniqueName": "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
       "projectName": "xXxYeetroom2000xXx",
-      "projectPath": "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
-      "packagesPath": "C:\\Users\\damba\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\obj\\",
+      "projectPath": "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
+      "packagesPath": "C:\\Users\\rsmets\\.nuget\\packages\\",
+      "outputPath": "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\damba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\rsmets\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
