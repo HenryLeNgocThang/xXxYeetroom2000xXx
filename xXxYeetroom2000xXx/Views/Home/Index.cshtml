@@ -3,27 +3,35 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>xXxYeetroom2000HDxXx</h1>
-<a asp-action="CreatePost">Neuen Post erstellen</a>
+<div id="page-headline">
+    <h1>xXxYeetroom2000HDxXx</h1>
+</div>
+<!--<a asp-action="CreatePost">Neuen Post erstellen</a>-->
 
 @{
-    <div style="border-collapse: collapse;">
+    <div class="posts">
         @foreach (Post post in ViewBag.Posts)
         {
-            <div style="border: 1px solid black; margin-bottom: 20px;">
-                <p> @post.Verfasser schrieb am @post.Datum: </p>
-                @{
-                    if (post.Link != "")
-                    {
-                        <img src="@post.Link" style="width: 1000px; height: 650px;" />
+            <div class="post">
+                <div class="author">
+                    <p>@post.Verfasser</p>
+                </div>
+                <div class="created-date">
+                    <p>@post.Datum</p>
+                </div>
+                <div class="post-content">
+                    @{
+                        if (post.Link != "")
+                        {
+                            <img src="@post.Link" />
+                        }
+                        if (post.Eintrag != "")
+                        {
+                            <p> @post.Eintrag </p>
+                        }
                     }
-                    if (post.Eintrag != "")
-                    {
-                        <p> @post.Eintrag </p>
-                    }
-                }
-
-                <div style="border: 1px solid black;">
+                </div>
+                <div class="post-comments">
                     @foreach (Kommentar kommentar in ViewBag.Kommentare)
                     {
                         @if (post.ID == kommentar.Post_ID)
@@ -31,8 +39,16 @@
                             <p> @kommentar.Verfasser schreib: @kommentar.Eintrag </p>
                         }
                     }
+                </div>
+                <div class="create-command">
+                    <input class="show-form btn btn-primary" type="button" value="Kommentar verfassen" />
                     <form asp-action="CreateKommentar">
-                        <div> <input asp-for="Verfasser" placeholder="Verfasser" /> <input asp-for="Eintrag" placeholder="Beitrag" /> <input style="visibility: hidden; width:0px; height:0px;" asp-for="Post_ID" value="@post.ID" /> <input type="submit" value="CreateKommentar" class="btn btn-primary" /> </div>
+                        <div class="form-group">
+                            <input class="form-control" asp-for="Verfasser" placeholder="Verfasser" />
+                            <input class="form-control" asp-for="Eintrag" placeholder="Beitrag" />
+                            <input class="hide hidden" asp-for="Post_ID" value="@post.ID" />
+                            <input class="btn btn-primary form-submit" type="submit" value="CreateKommentar" />
+                        </div>
                     </form>
                 </div>
             </div>

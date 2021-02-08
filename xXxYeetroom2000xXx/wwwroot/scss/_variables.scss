@@ -6,4 +6,14 @@ $theme-colors: (
     "success": $danger
 );
 
+$font-family-sans-serif: "Roboto", sans-serif;
+
+$container-max-widths: (
+    "md": 700px,
+    "lg": 900px
+);
+
+$box-shadow: rgba(0, 0, 0, .15) 10px 0px 15px;
+
 $body-bg: #ffffff;
+$body-color: #111111;

@@ -1,4 +1,42 @@
-﻿header
- {
-    box-shadow: rgba(0, 0, 0, .4) 10px -10px 10px
+﻿header {
+    flex: 1 1 75px;
+
+    .d-flex {
+        height: 100%;
+        width: 100%;
+
+        [class*="p-"] {
+            padding: 0 !important;
+        }
+    }
+
+    .navbar {
+        position: fixed;
+        width: 75px;
+        height: 100vh;
+        padding: 20px 0;
+    }
+
+    .navbar-brand {
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+        font-size: 40px;
+        font-weight: 300;
+    }
+
+    .nav-link {
+        font-size: 30px;
+        padding: 20px 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    ul.navbar-nav {
+        li.nav-item {
+            width: auto;
+        }
+    }
 }

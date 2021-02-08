@@ -1,4 +1,29 @@
-﻿@import 'variables';
+﻿// Bootstrap variable overrides
+@import 'variables';
+// Bootstrap import
 @import '~bootstrap/scss/bootstrap';
+// Overrides and general classes
+@import 'overrides';
 
+// Component imports
 @import 'navbar';
+@import 'posts';
+
+// Layout styling
+#content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+
+    #content {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    #page-headline {
+        h1 {
+            text-align: center;
+            font-weight: 300;
+        }
+    }
+}

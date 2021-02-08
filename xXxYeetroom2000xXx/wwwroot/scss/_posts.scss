@@ -1,0 +1,9 @@
+﻿.posts {
+    form {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+}
