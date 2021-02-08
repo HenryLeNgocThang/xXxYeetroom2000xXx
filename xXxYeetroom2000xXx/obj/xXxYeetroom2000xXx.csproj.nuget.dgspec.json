@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj": {}
+    "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj": {}
   },
   "projects": {
-    "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj": {
+    "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
+        "projectUniqueName": "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
         "projectName": "xXxYeetroom2000xXx",
-        "projectPath": "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
-        "packagesPath": "C:\\Users\\damba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\damba\\Desktop\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\obj\\",
+        "projectPath": "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
+        "packagesPath": "C:\\Users\\rsmets\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\damba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\rsmets\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -41,6 +45,8 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.10, )"
             },
