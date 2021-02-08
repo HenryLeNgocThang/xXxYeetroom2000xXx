@@ -30,6 +30,38 @@ namespace xXxYeetroom2000xXx.Controllers
 
             return View();
         }
+        [HttpGet]
+        public IActionResult CreateKommentar(int PostID)
+        {
+            ViewBag.PostID = PostID; 
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateKommentar([Bind("Verfasser,Eintrag,Post_ID")] Post post)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Add(post);
+                if (post.Link == null)
+                {
+                    post.Link = "";
+                }
+                if (post.Eintrag == null)
+                {
+                    post.Eintrag = "";
+                }
+                if (post.Verfasser == null)
+                {
+                    post.Verfasser = "Anonym";
+                }
+                post.Datum = DateTime.Now;
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(post);
+        }
 
         public IActionResult CreatePost()
         {

@@ -3,7 +3,7 @@
 }
 
 <h2>Index</h2>
-<a asp-action="CreatePost">Create New</a>
+<a asp-action="CreatePost">Neuen Post erstellen</a>
 
 
 @{
@@ -22,42 +22,8 @@
                     }
                 }
             </div>
+            <a asp-action="CreateKommentar" asp-route-id="@post.ID">Kommentar schreiben</a>
         </div>
     </div>
     }
-}
-
-@*@{
-    foreach (Post post in ViewBag.Posts)
-    {
-        <div id="@post.ID">
-            <div style="text-align: right; margin-bottom: 0px;">
-                @post.Verfasser sagte am @post.Datum
-                @{ if (post.Link != "")
-                    {
-                        <img src="@post.Link" />
-                    }
-                    if (post.Eintrag != "")
-                    {
-                        <p> @post.Eintrag </p>
-                    }
-                }
-
-            </div>
-            @foreach (var Kommentar in Model.AlleKommentare)
-            {
-                if (post.ID == Kommentar.Post_ID)
-                {
-                    foreach (var Benutzer in Model.AlleBenutzer)
-                    {
-                        if (Benutzer.ID == Kommentar.Benutzer_ID)
-                        {
-                            <p style="border: 1px solid black; font-size: 10px;"> @Benutzer.Name: @Kommentar.Eintrag </p>
-                        }
-                    }
-                }
-            }
-        </div>
-
-    }*@
 }
