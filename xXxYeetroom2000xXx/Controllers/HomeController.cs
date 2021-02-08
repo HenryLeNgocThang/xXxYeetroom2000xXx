@@ -30,37 +30,27 @@ namespace xXxYeetroom2000xXx.Controllers
 
             return View();
         }
-        [HttpGet]
-        public IActionResult CreateKommentar(int PostID)
-        {
-            ViewBag.PostID = PostID; 
-            return View();
-        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateKommentar([Bind("Verfasser,Eintrag,Post_ID")] Post post)
+        public async Task<IActionResult> CreateKommentar([Bind("Verfasser,Eintrag,Post_ID")] Kommentar kommentar)
         {
             if (ModelState.IsValid)
             {
-                _db.Add(post);
-                if (post.Link == null)
+                _db.Add(kommentar);
+                if (kommentar.Eintrag == null)
                 {
-                    post.Link = "";
+                    kommentar.Eintrag = "";
                 }
-                if (post.Eintrag == null)
+                if (kommentar.Verfasser == null)
                 {
-                    post.Eintrag = "";
+                    kommentar.Verfasser = "Anonym";
                 }
-                if (post.Verfasser == null)
-                {
-                    post.Verfasser = "Anonym";
-                }
-                post.Datum = DateTime.Now;
+                kommentar.Datum = DateTime.Now;
                 await _db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(post);
+            return View();
         }
 
         public IActionResult CreatePost()

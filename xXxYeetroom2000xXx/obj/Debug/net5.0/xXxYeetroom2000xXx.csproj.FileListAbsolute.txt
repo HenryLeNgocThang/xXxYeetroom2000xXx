@@ -46,7 +46,6 @@ C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\sc
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\xXxYeetroom2000xXx.TagHelpers.input.cache
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\xXxYeetroom2000xXx.TagHelpers.output.cache
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\xXxYeetroom2000xXx.RazorCoreGenerate.cache
-C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\Home\CreateKommentar.cshtml.g.cs
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\Home\CreatePost.cshtml.g.cs
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\damba\Desktop\xXxYeetroom2000xXx\xXxYeetroom2000xXx\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
