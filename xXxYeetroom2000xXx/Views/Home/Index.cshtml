@@ -6,23 +6,33 @@
 <a asp-action="CreatePost">Neuen Post erstellen</a>
 
 @{
-    foreach (Post post in ViewBag.Posts)
-    {
-    <div style="border-collapse: collapse; margin-bottom: 10px;">
-        <div style="border: 1px solid black;">
-            <p style="font-size: 20px; font-weight: bold;"> @post.Verfasser schrieb am @post.Datum: </p>
-            <p style="font-size: 20px; font-weight: bold;"> @post.Eintrag </p>
+    <div style="border-collapse: collapse;">
+        @foreach (Post post in ViewBag.Posts)
+        {
+        <div style="border: 1px solid black; margin-bottom: 20px;">
+            <p> @post.Verfasser schrieb am @post.Datum: </p>
+            @{
+                if (post.Link != "")
+                {
+                    <img src="@post.Link" style="width: 1000px; height: 650px;" />
+                }
+                if (post.Eintrag != "")
+                {
+                    <p> @post.Eintrag </p>
+                }
+            }
+
             <div style="border: 1px solid black;">
                 @foreach (Kommentar kommentar in ViewBag.Kommentare)
                 {
-                    if (kommentar.Post_ID == post.ID)
+                    @if (post.ID == kommentar.Post_ID)
                     {
                         <p> @kommentar.Verfasser schreib: @kommentar.Eintrag </p>
                     }
                 }
+                <a asp-action="CreateKommentar" asp-route-id="@post.ID">Kommentar schreiben</a>
             </div>
-            <a asp-action="CreateKommentar" asp-route-id="@post.ID">Kommentar schreiben</a>
         </div>
+        }
     </div>
-    }
 }
