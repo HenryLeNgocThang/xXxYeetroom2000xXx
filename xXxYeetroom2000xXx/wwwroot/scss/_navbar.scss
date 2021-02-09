@@ -1,5 +1,6 @@
 ﻿header {
     flex: 1 1 75px;
+    box-shadow: rgba(0, 0, 0, .4)  10px 0px 15px;
 
     .d-flex {
         height: 100%;
@@ -28,6 +29,7 @@
     .nav-link {
         font-size: 30px;
         padding: 20px 0;
+        color: $primary;
 
         &:hover {
             cursor: pointer;

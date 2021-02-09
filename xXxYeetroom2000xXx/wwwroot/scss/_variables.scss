@@ -1,19 +1,37 @@
-﻿$primary: #0074d9;
+﻿// Colors
+$primary: #483CCC;
 $danger: #ff4136;
+$white: #ffffff;
+
+$body-bg: #ffffff;
+$body-color: #111111;
 
 $theme-colors: (
     "primary": $primary,
-    "success": $danger
+    "success": $danger,
+    "white": $white
 );
 
+// Fonts
 $font-family-sans-serif: "Roboto", sans-serif;
 
+// Breakpoints
 $container-max-widths: (
     "md": 700px,
     "lg": 900px
 );
 
-$box-shadow: rgba(0, 0, 0, .15) 10px 0px 15px;
+// Gutters
+$grid-gutter-width: 50px;
 
-$body-bg: #ffffff;
-$body-color: #111111;
+// Rest
+$box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.4);
+$box-shadow-hover: 0px 10px 20px -5px rgba(0, 0, 0, 0.4);
+$border-radius: 4px;
+$transition-base: all .3s ease-in-out;
+$modal-scale-transform: scale(1.01);
+
+$input-btn-focus-width: 0;
+$input-btn-focus-color: unset;
+
+$lead-font-weight: 400;

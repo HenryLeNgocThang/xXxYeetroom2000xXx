@@ -1,9 +1,80 @@
 ﻿.posts {
-    form {
-        display: none;
+    [class*="col-"] {
+        padding-bottom: 20px;
+    }
 
-        &.show {
+    p {
+        margin: 0;
+    }
+
+    .post {
+        box-shadow: $box-shadow;
+        margin: 60px 0;
+        background-color: $white;
+        border-radius: $border-radius;
+        transform: scale(1);
+        transition: $transition-base;
+
+        &:hover {
+            transform: $modal-scale-transform;
+            box-shadow: $box-shadow-hover;
+        }
+    }
+
+    .create-command {
+        form {
+            overflow-y: hidden;
+            height: 0;
+            transition: $transition-base;
+
+            &.show {
+                height: 213px;
+            }
+        }
+    }
+
+    .post-comments {
+        &:empty {
+            padding: 0;
+        }
+    }
+
+    .post-head {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .post-content {
+        overflow: hidden;
+
+        &:empty {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
             display: block;
+            margin: 0 auto 20px;
+            max-height: 450px;
+            height: 100%;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        textarea,
+        input {
+            margin-top: 10px;
+        }
+
+        textarea {
+            resize: none;
         }
     }
 }
