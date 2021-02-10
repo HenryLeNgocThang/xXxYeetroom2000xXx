@@ -17,7 +17,7 @@ $(document).ready(function () {
         
         if ($currentTarget.hasClass("show-form")) {
             // Show form if pressed element has class show-form
-            $currentTarget.next().addClass("show");
+            $currentTarget.prev().addClass("show");
 
             // Reset every input fields if pressed target is not input field from target
             $("input.form-control").each(function () {

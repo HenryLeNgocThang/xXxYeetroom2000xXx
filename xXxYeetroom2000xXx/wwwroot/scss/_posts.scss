@@ -12,23 +12,48 @@
         margin: 60px 0;
         background-color: $white;
         border-radius: $border-radius;
-        transform: scale(1);
         transition: $transition-base;
 
         &:hover {
-            transform: $modal-scale-transform;
             box-shadow: $box-shadow-hover;
         }
     }
 
+    .show-form {
+        position: absolute;
+        transform: translateY(-100%);
+        transition: top .3s ease-in-out, opacity .1s ease-in-out;
+    }
+
     .create-command {
+        position: relative;
+
         form {
             overflow-y: hidden;
             height: 0;
+            margin-bottom: 40px;
             transition: $transition-base;
+
+            .form-submit {
+                white-space: nowrap;
+                width: 40px;
+                transition: width .1s ease-in-out;
+            }
 
             &.show {
                 height: 213px;
+                margin-bottom: 0;
+
+                .form-submit {
+                    width: 150px;
+                    transition: width .1s .2s ease-in-out;
+                }
+
+                ~ .show-form {
+                    transform: translateY(-200%);
+                    opacity: 0;
+                    transition: transform .1s .3s ease-in-out, opacity .1s .2s ease-in-out;
+                }
             }
         }
     }
@@ -69,8 +94,9 @@
         flex-wrap: wrap;
 
         textarea,
+        button,
         input {
-            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         textarea {

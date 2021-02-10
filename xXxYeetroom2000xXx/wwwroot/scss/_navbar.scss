@@ -1,6 +1,5 @@
 ﻿header {
     flex: 1 1 75px;
-    box-shadow: rgba(0, 0, 0, .4)  10px 0px 15px;
 
     .d-flex {
         height: 100%;
@@ -16,6 +15,8 @@
         width: 75px;
         height: 100vh;
         padding: 20px 0;
+        background-color: $white;
+        box-shadow: $box-shadow;
     }
 
     .navbar-brand {
@@ -31,8 +32,42 @@
         padding: 20px 0;
         color: $primary;
 
+        .fa-refresh {
+            transition: transform 0;
+        }
+
+        .fa-commenting,
+        .fa-commenting-o {
+            transition: $transition-base;
+        }
+
+        .fa-commenting {
+            transform: translateX(-19px);
+        }
+
+        .fa-commenting-o {
+            transform: translateX(19px);
+        }
+
         &:hover {
             cursor: pointer;
+
+            .fa-refresh {
+                transform: rotate(360deg);
+                transition: $transition-base;
+            }
+
+            .fa-cog {
+                animation: 1.5s linear 0s infinite running fa-Cog;
+            }
+
+            .fa-commenting {
+                opacity: 0;
+            }
+
+            .fa-commenting-o {
+                opacity: 1;
+            }
         }
     }
 
@@ -40,5 +75,15 @@
         li.nav-item {
             width: auto;
         }
+    }
+}
+
+@keyframes fa-Cog {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(180deg);
     }
 }
