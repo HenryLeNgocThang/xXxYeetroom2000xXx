@@ -36,17 +36,25 @@
             transition: transform 0;
         }
 
-        .fa-commenting,
-        .fa-commenting-o {
-            transition: $transition-base;
-        }
-
         .fa-commenting {
-            transform: translateX(-19px);
-        }
+            position: relative;
+            height: 30px;
+            width: 30px;
+            margin: 0 auto;
+            display: block;
 
-        .fa-commenting-o {
-            transform: translateX(19px);
+            &:after,
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: $transition-base;
+            }
+
+            &:after {
+                content: "\f27b";
+                opacity: 0;
+            }
         }
 
         &:hover {
@@ -58,15 +66,21 @@
             }
 
             .fa-cog {
-                animation: 1.5s linear 0s infinite running fa-Cog;
+                animation: 1.5s linear 0s infinite running fa-cog;
+            }
+
+            .fa-plus-square {
+                animation: 2s cubic-bezier(.5,0,.5,1) 0s infinite running fa-plus-square;
             }
 
             .fa-commenting {
-                opacity: 0;
-            }
+                &:before {
+                    opacity: 0;
+                }
 
-            .fa-commenting-o {
-                opacity: 1;
+                &:after {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -78,12 +92,34 @@
     }
 }
 
-@keyframes fa-Cog {
+@keyframes fa-cog {
     from {
         transform: rotate(0);
     }
 
     to {
         transform: rotate(180deg);
+    }
+}
+
+@keyframes fa-plus-square {
+    0% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(.8);
+    }
+
+    20% {
+        transform: scale(1.1);
+    }
+
+    25% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }

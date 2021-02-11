@@ -1,4 +1,8 @@
 ﻿.posts {
+    background-color: #E1E7EF;
+    position: relative;
+    z-index: 1;
+
     [class*="col-"] {
         padding-bottom: 20px;
     }
@@ -70,6 +74,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        .author {
+            color: $primary;
+        }
     }
 
     .post-content {
@@ -84,7 +92,6 @@
             display: block;
             margin: 0 auto 20px;
             max-height: 450px;
-            height: 100%;
         }
     }
 

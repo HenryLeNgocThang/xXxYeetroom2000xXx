@@ -22,6 +22,9 @@
     }
 
     #page-headline {
+        position: sticky;
+        top: 50px;
+
         h1 {
             text-align: center;
             font-weight: 300;
@@ -32,4 +35,19 @@
 
 i.fa {
     pointer-events: none;
+}
+
+[lazyload] {
+    transform: translateY(-10%);
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+[lazyload].load {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+hr {
+    border-width: 1px;
 }

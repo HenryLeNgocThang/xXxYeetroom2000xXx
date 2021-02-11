@@ -1,8 +1,11 @@
 ﻿// Imports
 import $ from "jquery";
+import lazyloader from "../js/lazyloader";
 
 $(document).ready(function () {
     // Good luck have fun :^)
+
+    lazyloader.simpleLazyLoader();
 
     // If someone clicks on the document
     $(document).on("click", function (event) {
@@ -14,7 +17,6 @@ $(document).ready(function () {
             $("form.show").removeClass("show");
         }
 
-        
         if ($currentTarget.hasClass("show-form")) {
             // Show form if pressed element has class show-form
             $currentTarget.prev().addClass("show");
@@ -24,5 +26,13 @@ $(document).ready(function () {
                 $(this).val("");
             });
         }
+    });
+
+    $(document).scroll(function () {
+        clearTimeout($.data(this, 'scrollTimer'));
+        $("main .posts").addClass("scrolling");
+        $.data(this, 'scrollTimer', setTimeout(function () {
+            $("main .posts").removeClass("scrolling");
+        }, 100));
     });
 });
