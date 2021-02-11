@@ -6200,25 +6200,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rsmets\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\spong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
+      "projectUniqueName": "D:\\XAMPP\\htdocs\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
       "projectName": "xXxYeetroom2000xXx",
-      "projectPath": "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
-      "packagesPath": "C:\\Users\\rsmets\\.nuget\\packages\\",
-      "outputPath": "C:\\Git\\Berufsschule\\Yeetroom\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\obj\\",
+      "projectPath": "D:\\XAMPP\\htdocs\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx.csproj",
+      "packagesPath": "C:\\Users\\spong\\.nuget\\packages\\",
+      "outputPath": "D:\\XAMPP\\htdocs\\xXxYeetroom2000xXx\\xXxYeetroom2000xXx\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\rsmets\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\spong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

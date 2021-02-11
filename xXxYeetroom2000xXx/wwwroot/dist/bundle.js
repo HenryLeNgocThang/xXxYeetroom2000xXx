@@ -146,10 +146,11 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!****************************!*\
   !*** ./wwwroot/js/site.js ***!
   \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\r\n// for details on configuring this project to bundle and minify static web assets.\r\n\r\n// Write your JavaScript code.\r\n\n\n//# sourceURL=webpack:///./wwwroot/js/site.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n﻿// Imports\n\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {\n    // Good luck have fun :^)\n\n    // If someone clicks on the document\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on(\"click\", function (event) {\n        // Current target\n        var $currentTarget = jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.target);\n\n        // Hide form if pressed target is not form-submit or form-control input\n        if (!$currentTarget.hasClass(\"form-submit\") && !$currentTarget.hasClass(\"form-control\")) {\n            jquery__WEBPACK_IMPORTED_MODULE_0___default()(\"form.show\").removeClass(\"show\");\n        }\n\n        \n        if ($currentTarget.hasClass(\"show-form\")) {\n            // Show form if pressed element has class show-form\n            $currentTarget.prev().addClass(\"show\");\n\n            // Reset every input fields if pressed target is not input field from target\n            jquery__WEBPACK_IMPORTED_MODULE_0___default()(\"input.form-control\").each(function () {\n                jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(\"\");\n            });\n        }\n    });\n});\n\n//# sourceURL=webpack:///./wwwroot/js/site.js?");
 
 /***/ }),
 

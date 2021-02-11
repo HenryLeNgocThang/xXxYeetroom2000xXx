@@ -1,0 +1,10 @@
+﻿.box-shadow {
+    box-shadow: $box-shadow;
+}
+
+.hide,
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
