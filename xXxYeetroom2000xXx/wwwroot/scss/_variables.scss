@@ -1,18 +1,83 @@
 ﻿// Colors
-$primary: #483CCC;
-$danger: #ff4136;
-$white: #ffffff;
+/*
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #ffffff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #483CCC;
+    --secondary: #6c757d;
+    --success: #ff4136;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #ff4136;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --white: #ffffff;
+}
+*/
 
-$body-bg: #ffffff;
+// Colors
+$blue: var(--blue);
+$indigo: var(--indigo);
+$purple: var(--purple);
+$pink: var(--pink);
+$red: var(--red);
+$orange: var(--orange);
+$yellow: var(--yellow);
+$green: var(--green);
+$teal: var(--teal);
+$cyan: var(--cyan);
+$gray: var(--gray);
+$gray-dark: var(--gray-dark);
+$primary: var(--primary);
+$secondary: var(--secondary);
+$success: var(--success);
+$info: var(--info);
+$warning: var(--warning);
+$danger: var(--danger);
+$light: var(--light);
+$dark: var(--dark);
+$whiten: var(--whiten);
+$background-color: var(--background-color);
+
+$body-bg: var(--white);
 $body-color: #111111;
 
 $theme-colors: (
-    "primary": $primary,
-    "success": $danger,
-    "white": $white
+    "blue": #007bff,
+    "indigo": #6610f2,
+    "purple": #6f42c1,
+    "pink": #e83e8c,
+    "red": #dc3545,
+    "orange": #fd7e14,
+    "yellow": #ffc107,
+    "green": #28a745,
+    "teal": #20c997,
+    "cyan": #17a2b8,
+    "gray": #6c757d,
+    "gray-dark": #343a40,
+    "primary": #483CCC,
+    "secondary": #6c757d,
+    "success": #ff4136,
+    "info": #17a2b8,
+    "warning": #ffc107,
+    "danger": #ff4136,
+    "light": #f8f9fa,
+    "dark": #343a40,
+    "whiten": #ffffff,
+    "background-color": #E1E7EF
 );
 
-// Fonts
 $font-family-sans-serif: "Roboto", sans-serif;
 $lead-font-weight: bolder;
 

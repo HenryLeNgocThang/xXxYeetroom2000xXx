@@ -36,7 +36,7 @@
             <div class="col-12 create-command">
                 <form asp-action="CreateKommentar">
                     <div class="form-group">
-                        <input class="form-control" asp-for="Verfasser" placeholder="Verfassername" />
+                        <input class="form-control" asp-for="Verfasser" placeholder="Name" />
                         <textarea class="form-control" rows="4" cols="50" asp-for="Eintrag" placeholder="Kommentar" required></textarea>
                         <input class="hide hidden" asp-for="Post_ID" value="@post.ID" />
                         <!--<input class="btn btn-primary form-submit" type="submit" value="Kommentieren" />-->

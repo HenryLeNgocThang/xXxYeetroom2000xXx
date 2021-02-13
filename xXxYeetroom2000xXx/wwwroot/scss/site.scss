@@ -8,6 +8,7 @@
 // Component imports
 @import 'navbar';
 @import 'posts';
+@import 'modal-settings';
 
 // Layout styling
 #content-wrapper {
@@ -18,7 +19,7 @@
     #content {
         width: 100%;
         flex: 1 1 100%;
-        background-color: #E1E7EF;
+        background-color: $background-color;
     }
 
     #page-headline {
@@ -50,4 +51,23 @@ i.fa {
 
 hr {
     border-width: 1px;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn-primary {
+    color: $whiten;
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active {
+        color: $whiten;
+        background-color: $primary;
+        border-color: $primary;
+        filter: brightness(85%);
+    }
 }

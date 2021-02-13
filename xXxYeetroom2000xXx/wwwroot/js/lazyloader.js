@@ -39,6 +39,8 @@ module.exports = {
                 images[i].dataset.load = true;
             }
         }
+
+        load();
     
         document.addEventListener("scroll", function () {
             if (images.length > 0) {
@@ -52,17 +54,7 @@ module.exports = {
                     }
                 }
 
-                for (var i = 0; i < lazyloadElements.length; i++) {
-                    if (!lazyloadElements[i].querySelector("img")) {
-                        if (lazyloadElements[i].getBoundingClientRect().top >= 0 &&
-                            lazyloadElements[i].getBoundingClientRect().bottom <= window.innerHeight ||
-                            lazyloadElements[i].getBoundingClientRect().top - lazyloadElements[i].offsetHeight >= 0 &&
-                            lazyloadElements[i].getBoundingClientRect().bottom <= 0
-                        ) {
-                            lazyloadElements[i].classList.add("load");
-                        }
-                    }
-                }
+                load();
             } else {
                 observer.disconnect();
             }
@@ -76,5 +68,19 @@ module.exports = {
                 }
             }
         };
+
+        function load() {
+            for (var i = 0; i < lazyloadElements.length; i++) {
+                if (!lazyloadElements[i].querySelector("img")) {
+                    if (lazyloadElements[i].getBoundingClientRect().top >= 0 &&
+                        lazyloadElements[i].getBoundingClientRect().bottom <= window.innerHeight ||
+                        lazyloadElements[i].getBoundingClientRect().top + lazyloadElements[i].offsetHeight >= 0 &&
+                        lazyloadElements[i].getBoundingClientRect().bottom >= 0
+                    ) {
+                        lazyloadElements[i].classList.add("load");
+                    }
+                }
+            }
+        }
     }
 }
