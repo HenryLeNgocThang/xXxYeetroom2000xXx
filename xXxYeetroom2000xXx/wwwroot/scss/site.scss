@@ -30,6 +30,7 @@
             text-align: center;
             font-weight: 300;
             margin: 50px 0;
+            color: $dark;
         }
     }
 }
@@ -51,6 +52,7 @@ i.fa {
 
 hr {
     border-width: 1px;
+    border-color: $dark;
 }
 
 textarea {
@@ -58,16 +60,48 @@ textarea {
 }
 
 .btn-primary {
-    color: $whiten;
+    color: $light;
     background-color: $primary;
     border-color: $primary;
 
     &:hover,
     &:focus,
     &:not(:disabled):not(.disabled):active {
-        color: $whiten;
+        color: $light;
         background-color: $primary;
         border-color: $primary;
+        filter: brightness(85%);
+    }
+}
+
+a {
+    color: $primary;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.form-control {
+    &:focus {
+        background-color: $light;
+        border-color: $primary;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+::-webkit-scrollbar-track {
+    background: $light;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border: 3px solid $light;
+
+    &:hover {
         filter: brightness(85%);
     }
 }

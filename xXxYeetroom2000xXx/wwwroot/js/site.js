@@ -1,24 +1,96 @@
 ﻿// Imports
 import $ from "jquery";
-import lazyloader from "../js/lazyloader";
+import { simpleLazyLoader } from "../js/lazyloader";
+import cookie from "../js/cookie";
+import coloring from "../js/coloring";
 import urlvalidator from "../js/urlvalidator";
 import interact from "interactjs";
 
 $(document).ready(function () {
     // Good luck have fun :^)
 
-    lazyloader.simpleLazyLoader();
+    var saveButton = $("#saveSettings");
+
+    var pageSettings = {
+        primary: {
+            element: document.querySelector("#primary-color"),
+            rootname: "--primary",
+            color: "#483CCC",
+            changedColor: ""
+        },
+        background: {
+            element: document.querySelector("#background-color"),
+            rootname: "--background-color",
+            color: "#E1E7EF",
+            changedColor: ""
+        }
+    }
+
+    simpleLazyLoader();
 
     $("#page-settings button").click(function () {
         $('#page-settings-modal').modal('hide');
     });
 
-    $("#primary-color").change(function () {
-        document.documentElement.style.setProperty('--primary', $(this).val());
+    Object.keys(pageSettings).forEach(setting => {
+        if (cookie.get(setting)) {
+            pageSettings[setting]["color"] = cookie.get(setting);
+            pageSettings[setting]["element"].value = pageSettings[setting]["color"];
+            document.documentElement.style.setProperty(pageSettings[setting]["rootname"], pageSettings[setting]["color"]);
+
+            var brightness;
+
+            pageSettings[setting]["changedColor"] = this.value;
+            brightness = coloring.brightness(
+                coloring.hexToRgb(pageSettings[setting]["changedColor"]).r,
+                coloring.hexToRgb(pageSettings[setting]["changedColor"]).g,
+                coloring.hexToRgb(pageSettings[setting]["changedColor"]).b,
+                "#343a40",
+                "#f8f9fa"
+            );
+            document.documentElement.style.setProperty(pageSettings[setting]["rootname"], pageSettings[setting]["color"]);
+
+            switch (pageSettings[setting]["rootname"]) {
+                case "--background-color":
+                    document.documentElement.style.setProperty("--dark", brightness);
+                    break;
+                case "--primary":
+                    document.documentElement.style.setProperty("--light", brightness);
+                    break;
+            }
+        }
     });
 
-    $("#background-color").change(function () {
-        document.documentElement.style.setProperty('--background-color', $(this).val());
+    for (var setting in pageSettings) {
+        pageSettings[setting]["element"].addEventListener("input", function () {
+            var brightness;
+
+            pageSettings[this.dataset.setting]["changedColor"] = this.value;
+            brightness = coloring.brightness(
+                coloring.hexToRgb(pageSettings[this.dataset.setting]["changedColor"]).r,
+                coloring.hexToRgb(pageSettings[this.dataset.setting]["changedColor"]).g,
+                coloring.hexToRgb(pageSettings[this.dataset.setting]["changedColor"]).b,
+                "#343a40",
+                "#f8f9fa"
+            );
+            document.documentElement.style.setProperty(pageSettings[this.dataset.setting]["rootname"], this.value);
+
+            switch (pageSettings[this.dataset.setting]["rootname"]) {
+                case "--background-color":
+                    document.documentElement.style.setProperty("--dark", brightness);
+                    break;
+                case "--primary":
+                    document.documentElement.style.setProperty("--light", brightness);
+                    break;
+            }
+        });
+    }
+
+    saveButton.click(function () {
+        for (var setting in pageSettings) {
+            pageSettings[setting]["color"] = pageSettings[setting]["changedColor"];
+            cookie.set(setting, pageSettings[setting]["color"], 1);
+        }
     });
 
     // If someone clicks on the document
@@ -59,7 +131,7 @@ $(document).ready(function () {
             }
         });
     });
-
+    
     interact('.draggable')
         .draggable({
             inertia: true,

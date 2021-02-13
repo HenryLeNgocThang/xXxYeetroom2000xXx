@@ -1,11 +1,16 @@
 ﻿#page-settings {
     pointer-events: all;
     width: 25%;
-    background-color: $whiten;
+    min-width: 300px;
+    background-color: $light;
     border-radius: $border-radius;
     touch-action: none;
     user-select: none;
     transform: translate(0, 0);
+
+    input[type="color"] {
+        cursor: pointer;
+    }
 }
 
 .modal.show .modal-dialog {
@@ -23,4 +28,26 @@
     background-color: transparent;
     border: none;
     pointer-events: none;
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(.8);
+    }
+
+    20% {
+        transform: scale(1.1);
+    }
+
+    25% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }

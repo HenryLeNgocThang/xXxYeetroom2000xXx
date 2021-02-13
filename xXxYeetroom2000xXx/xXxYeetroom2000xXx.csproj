@@ -14,17 +14,12 @@
 
   <ItemGroup>
     <!-- extends watching group to include *.js files -->
-    <Watch Include="wwwroot\js\**\*.js;**\*.scss" Exclude="wwwroot\dist;node_modules\**\*;**\*.js.map;obj\**\*;bin\**\*" />
+    <Watch Include="wwwroot\js\**\*.js;wwwroot\scss\**\*.scss;wwwroot\img" Exclude="wwwroot\dist;node_modules\**\*;**\*.js.map;obj\**\*;bin\**\*" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Watch Remove="wwwroot\js\urlvalidator.js" />
-    <Watch Remove="wwwroot\scss\_modal-settings.scss" />
-  </ItemGroup>
-
-  <Target Name="Create bundles" BeforeTargets="BeforeBuild">
+  <!--<Target Name="Create bundles" BeforeTargets="BeforeBuild">
     <Exec Command="npm run build" />
-  </Target>
+  </Target>-->
 
   <ProjectExtensions>
     <VisualStudio>

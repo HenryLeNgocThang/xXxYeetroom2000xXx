@@ -90,7 +90,7 @@ c253 4 276 8 297 59 19 44 8 146 -22 210 -35 76 -88 133 -156 166 -49 24 -71
             </nav>
         </header>
         <div id="content">
-            <div class="modal fade" id="page-settings-modal" tabindex="-1" role="dialog" aria-labelledby="page-settings-modalTitle" aria-hidden="true">
+            <div class="modal" id="page-settings-modal" tabindex="-1" role="dialog" aria-labelledby="page-settings-modalTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div id="page-settings" class="draggable">
@@ -103,26 +103,26 @@ c253 4 276 8 297 59 19 44 8 146 -22 210 -35 76 -88 133 -156 166 -49 24 -71
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label for="primary-color">
+                                        <label>
                                             Primärfarbe:
                                         </label>
                                     </div>
                                     <div class="col-6">
-                                        <input id="primary-color" type="color" />
+                                        <input id="primary-color" data-setting="primary" type="color" />
                                     </div>
                                     <div class="col-6">
-                                        <label for="primary-color">
+                                        <label>
                                             Hintergrundfarbe:
                                         </label>
                                     </div>
                                     <div class="col-6">
-                                        <input id="background-color" type="color" />
+                                        <input id="background-color" data-setting="background" type="color" />
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button id="saveSettings" type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
