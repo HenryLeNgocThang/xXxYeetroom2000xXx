@@ -40,14 +40,14 @@ $(document).ready(function () {
 
             var brightness;
 
-            pageSettings[setting]["changedColor"] = this.value;
             brightness = coloring.brightness(
-                coloring.hexToRgb(pageSettings[setting]["changedColor"]).r,
-                coloring.hexToRgb(pageSettings[setting]["changedColor"]).g,
-                coloring.hexToRgb(pageSettings[setting]["changedColor"]).b,
+                coloring.hexToRgb(pageSettings[setting]["color"]).r,
+                coloring.hexToRgb(pageSettings[setting]["color"]).g,
+                coloring.hexToRgb(pageSettings[setting]["color"]).b,
                 "#343a40",
                 "#f8f9fa"
             );
+
             document.documentElement.style.setProperty(pageSettings[setting]["rootname"], pageSettings[setting]["color"]);
 
             switch (pageSettings[setting]["rootname"]) {
@@ -56,6 +56,11 @@ $(document).ready(function () {
                     break;
                 case "--primary":
                     document.documentElement.style.setProperty("--light", brightness);
+                    if (brightness == "#343a40") {
+                        document.documentElement.style.setProperty("--gray-dark", "#f8f9fa");
+                    } else {
+                        document.documentElement.style.setProperty("--gray-dark", "#343a40");
+                    }
                     break;
             }
         }
@@ -81,6 +86,11 @@ $(document).ready(function () {
                     break;
                 case "--primary":
                     document.documentElement.style.setProperty("--light", brightness);
+                    if (brightness == "#343a40") {
+                        document.documentElement.style.setProperty("--gray-dark", "#f8f9fa");
+                    } else {
+                        document.documentElement.style.setProperty("--gray-dark", "#343a40");
+                    }
                     break;
             }
         });

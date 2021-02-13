@@ -8869,7 +8869,7 @@ header {
   .posts .post {
     box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.4);
     margin: 60px 0;
-    background-color: var(--whiten);
+    background-color: var(--light);
     border-radius: 4px;
     transition: all 0.3s ease-in-out; }
     .posts .post:hover {
@@ -8931,7 +8931,7 @@ header {
   pointer-events: all;
   width: 25%;
   min-width: 300px;
-  background-color: var(--whiten);
+  background-color: var(--light);
   border-radius: 4px;
   touch-action: none;
   user-select: none;
@@ -8965,6 +8965,9 @@ header {
     transform: scale(1); }
   100% {
     transform: scale(1); } }
+
+body {
+  color: var(--gray-dark); }
 
 #content-wrapper {
   min-height: 100vh;
@@ -9003,11 +9006,11 @@ textarea {
   resize: none; }
 
 .btn-primary {
-  color: var(--whiten);
+  color: var(--light);
   background-color: var(--primary);
   border-color: var(--primary); }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
-    color: var(--whiten);
+    color: var(--light);
     background-color: var(--primary);
     border-color: var(--primary);
     filter: brightness(85%); }
@@ -9018,18 +9021,21 @@ a {
     color: var(--primary); }
 
 .form-control:focus {
-  background-color: var(--whiten);
+  background-color: var(--light);
   border-color: var(--primary); }
 
 ::-webkit-scrollbar {
   width: 18px; }
 
 ::-webkit-scrollbar-track {
-  background: var(--whiten); }
+  background: var(--light); }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary);
-  border: 3px solid var(--whiten); }
+  border: 3px solid var(--light); }
   ::-webkit-scrollbar-thumb:hover {
     filter: brightness(85%); }
+
+.close {
+  color: var(--gray-dark); }
 

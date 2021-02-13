@@ -10,6 +10,10 @@
 @import 'posts';
 @import 'modal-settings';
 
+body {
+    color: $gray-dark;
+}
+
 // Layout styling
 #content-wrapper {
     min-height: 100vh;
@@ -104,4 +108,8 @@ a {
     &:hover {
         filter: brightness(85%);
     }
+}
+
+.close {
+    color: $gray-dark;
 }
