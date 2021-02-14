@@ -8874,16 +8874,20 @@ header {
           opacity: 0;
           transition: transform .1s .3s ease-in-out, opacity .1s .2s ease-in-out; }
   .posts .post-comments {
-    height: 70px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition: all 0.3s ease-in-out; }
-    .posts .post-comments:empty {
-      padding: 0; }
-    .posts .post-comments .post-first-command ~ a {
-      margin-bottom: 20px;
-      display: block; }
-    .posts .post-comments.open-commands {
-      height: 100%; }
+    .posts .post-comments .collapse {
+      overflow: hidden; }
+    .posts .post-comments > a {
+      display: none;
+      font-size: 14px;
+      margin-top: 10px;
+      transition: all 0.3s ease-in-out; }
+      .posts .post-comments > a.collapsed {
+        margin-top: 0; }
+      .posts .post-comments > a.show {
+        display: block; }
   .posts .post-head {
     padding-top: 30px;
     padding-bottom: 30px;

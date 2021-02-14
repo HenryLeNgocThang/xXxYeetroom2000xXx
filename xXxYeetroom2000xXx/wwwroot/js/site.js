@@ -66,6 +66,40 @@ $(document).ready(function () {
         }
     });
 
+    $(".post-comments").each(function () {
+        var $showCommentsBtn = $(this).find("a[data-toggle='collapse']") ? $(this).find("a[data-toggle='collapse']") : null;
+        var $commentsText = $(this).find('.collapse p').toggle() ? $(this).find('.collapse p').toggle() : null;
+        var $comments = $(this).find(".collapse").toggle();
+
+        if ($showCommentsBtn && $commentsText) {
+            if ($commentsText.length >= 2) {
+                $showCommentsBtn.addClass("show");
+                $comments.height(`${$commentsText.height() + 4}px`);
+            } else {
+                $comments.addClass("show");
+                $showCommentsBtn.attr("aria-expanded", true);
+                $showCommentsBtn.addClass("collapsed");
+            }
+
+            $showCommentsBtn.click(function () {
+                setTimeout(function () {
+                    if (!$showCommentsBtn.hasClass("collapsed")) {
+                        $showCommentsBtn.text("Weniger anzeigen");
+                    } else {
+                        $showCommentsBtn.text("Alle Kommentare anzeigen");
+                    }
+                }, 300);
+
+                if (!$showCommentsBtn.hasClass("collapsed")) {
+                    $comments.collapse('hide');
+                    $comments.height(`${$commentsText.height() + 4}px`);
+                } else {
+                    $comments.collapse('show');
+                }
+            });
+        }
+    });
+
     for (var setting in pageSettings) {
         pageSettings[setting]["element"].addEventListener("input", function () {
             var brightness;
@@ -103,7 +137,7 @@ $(document).ready(function () {
         }
     });
 
-    $('a[href^="#"]').on('click', function (e) {
+    $('a[href^="#"]:not([data-toggle="collapse"])').on('click', function (e) {
         e.preventDefault();
         var target = this.hash;
         var $target = $(target);

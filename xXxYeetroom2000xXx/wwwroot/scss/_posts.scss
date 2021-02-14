@@ -63,23 +63,27 @@
     }
 
     .post-comments {
-        height: 70px;
-        overflow: hidden;
+        display: flex;
+        flex-direction: column;
         transition: $transition-base;
 
-        &:empty {
-            padding: 0;
+        .collapse {
+            overflow: hidden;
         }
 
-        .post-first-command {
-            ~ a {
-                margin-bottom: 20px;
+        > a {
+            display: none;
+            font-size: 14px;
+            margin-top: 10px;
+            transition: $transition-base;
+
+            &.collapsed {
+                margin-top: 0;
+            }
+
+            &.show {
                 display: block;
             }
-        }
-
-        &.open-commands {
-            height: 100%;
         }
     }
 

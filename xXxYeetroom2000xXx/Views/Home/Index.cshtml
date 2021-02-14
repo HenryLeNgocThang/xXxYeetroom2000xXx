@@ -12,7 +12,7 @@
     <div class="posts">
         @foreach (Post post in ViewBag.Posts)
         {
-        <div class="row post" lazyload>
+        <div id="post-@post.ID" class="row post" lazyload>
             <div class="col-12 post-head">
                 <div class="author">
                     <p class="lead">@post.Verfasser</p>
@@ -22,16 +22,12 @@
                 </div>
             </div>
             <div class="col-12 post-content">
-                @{
-                    if (post.Link != "")
-                    {
-                        <img data-src="@post.Link" alt="Bild" />
-                    }
-                    if (post.Eintrag != "")
-                    {
-                        <p> @post.Eintrag </p>
-                    }
-                }
+                @{ if (post.Link != "")
+                                    {
+                    <img data-src="@post.Link" alt="Bild" /> }
+                                    if (post.Eintrag != "")
+                                    {
+                    <p> @post.Eintrag </p> } }
             </div>
             <div class="col-12 create-command">
                 <form asp-action="CreateKommentar">
@@ -49,22 +45,32 @@
                     <i class="fa fa-comment-o" aria-hidden="true"></i>
                 </button>
             </div>
-            <div id="post-command-@post.ID" class="col-12 post-comments">
+            <div class="col-12 post-comments">
                 @{ int index = 0; }
+
+                <div class="collapse" id="post-command-@post.ID">
+                    @foreach (Kommentar kommentar in ViewBag.Kommentare)
+                    {
+                        if (post.ID == kommentar.Post_ID)
+                        {
+                            <p>
+                                <strong>@kommentar.Verfasser</strong> @kommentar.Eintrag
+                            </p>
+                        }
+                    }
+                </div>
 
                 @foreach (Kommentar kommentar in ViewBag.Kommentare)
                 {
-                    @if (post.ID == kommentar.Post_ID)
+                    if (post.ID == kommentar.Post_ID)
                     {
-                        @if (kommentar.Eintrag.Any() && index == 0)
+                        if (kommentar.Eintrag.Any() && index == 0)
                         {
-                            <a class="show-commands" href="#post-command-@post.ID">Alle Kommentare anzeigen</a>
+                            <a data-toggle="collapse" href="#post-command-@post.ID" role="button" aria-expanded="false" aria-controls="post-command-@post.ID">
+                                Alle Kommentare anzeigen
+                            </a>
                             index++;
                         }
-
-                        <p>
-                            <strong>@kommentar.Verfasser</strong> @kommentar.Eintrag
-                        </p>
                     }
                 }
             </div>
