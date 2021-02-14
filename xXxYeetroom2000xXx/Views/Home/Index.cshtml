@@ -49,12 +49,22 @@
                     <i class="fa fa-comment-o" aria-hidden="true"></i>
                 </button>
             </div>
-            <div class="col-12 post-comments">
+            <div id="post-command-@post.ID" class="col-12 post-comments">
+                @{ int index = 0; }
+
                 @foreach (Kommentar kommentar in ViewBag.Kommentare)
                 {
                     @if (post.ID == kommentar.Post_ID)
                     {
-                        <p>@kommentar.Verfasser: @kommentar.Eintrag</p>
+                        @if (kommentar.Eintrag.Any() && index == 0)
+                        {
+                            <a class="show-commands" href="#post-command-@post.ID">Alle Kommentare anzeigen</a>
+                            index++;
+                        }
+
+                        <p>
+                            <strong>@kommentar.Verfasser</strong> @kommentar.Eintrag
+                        </p>
                     }
                 }
             </div>

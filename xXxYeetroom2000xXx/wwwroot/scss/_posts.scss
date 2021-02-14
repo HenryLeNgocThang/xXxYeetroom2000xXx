@@ -63,8 +63,23 @@
     }
 
     .post-comments {
+        height: 70px;
+        overflow: hidden;
+        transition: $transition-base;
+
         &:empty {
             padding: 0;
+        }
+
+        .post-first-command {
+            ~ a {
+                margin-bottom: 20px;
+                display: block;
+            }
+        }
+
+        &.open-commands {
+            height: 100%;
         }
     }
 

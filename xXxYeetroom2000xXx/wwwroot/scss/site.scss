@@ -9,6 +9,7 @@
 @import 'navbar';
 @import 'posts';
 @import 'modal-settings';
+@import 'message-box';
 
 body {
     color: $gray-dark;
@@ -21,6 +22,7 @@ body {
     flex-direction: row;
 
     #content {
+        position: relative;
         width: 100%;
         flex: 1 1 100%;
         background-color: $background-color;

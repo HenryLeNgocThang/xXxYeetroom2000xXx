@@ -99,8 +99,19 @@ $(document).ready(function () {
     saveButton.click(function () {
         for (var setting in pageSettings) {
             pageSettings[setting]["color"] = pageSettings[setting]["changedColor"];
-            cookie.set(setting, pageSettings[setting]["color"], 1);
+            cookie.set(setting, pageSettings[setting]["color"], 2100);
         }
+    });
+
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 900, 'swing', function () {
+            window.location.hash = target;
+        });
     });
 
     // If someone clicks on the document

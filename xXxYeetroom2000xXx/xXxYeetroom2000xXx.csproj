@@ -17,9 +17,9 @@
     <Watch Include="wwwroot\js\**\*.js;wwwroot\scss\**\*.scss;wwwroot\img" Exclude="wwwroot\dist;node_modules\**\*;**\*.js.map;obj\**\*;bin\**\*" />
   </ItemGroup>
 
-  <!--<Target Name="Create bundles" BeforeTargets="BeforeBuild">
+  <Target Name="Create bundles" BeforeTargets="BeforeBuild">
     <Exec Command="npm run build" />
-  </Target>-->
+  </Target>
 
   <ProjectExtensions>
     <VisualStudio>
