@@ -10,6 +10,7 @@ $(document).ready(function () {
     // Good luck have fun :^)
 
     var saveButton = $("#saveSettings");
+    var messageBox = $("#message-box");
 
     var pageSettings = {
         primary: {
@@ -32,6 +33,14 @@ $(document).ready(function () {
         $('#page-settings-modal').modal('hide');
     });
 
+    if (!cookie.get("init")) {
+        messageBox.addClass("play").text("Raum betreten!");
+        cookie.set("init", true);
+        setTimeout(function () {
+            messageBox.removeClass("play");
+        }, 5100);
+    }
+
     Object.keys(pageSettings).forEach(setting => {
         if (cookie.get(setting)) {
             pageSettings[setting]["color"] = cookie.get(setting);
@@ -44,7 +53,7 @@ $(document).ready(function () {
                 coloring.hexToRgb(pageSettings[setting]["color"]).r,
                 coloring.hexToRgb(pageSettings[setting]["color"]).g,
                 coloring.hexToRgb(pageSettings[setting]["color"]).b,
-                "#343a40",
+                "#111111",
                 "#f8f9fa"
             );
 
@@ -56,10 +65,10 @@ $(document).ready(function () {
                     break;
                 case "--primary":
                     document.documentElement.style.setProperty("--light", brightness);
-                    if (brightness == "#343a40") {
+                    if (brightness == "#111111") {
                         document.documentElement.style.setProperty("--gray-dark", "#f8f9fa");
                     } else {
-                        document.documentElement.style.setProperty("--gray-dark", "#343a40");
+                        document.documentElement.style.setProperty("--gray-dark", "#111111");
                     }
                     break;
             }
@@ -109,7 +118,7 @@ $(document).ready(function () {
                 coloring.hexToRgb(pageSettings[this.dataset.setting]["changedColor"]).r,
                 coloring.hexToRgb(pageSettings[this.dataset.setting]["changedColor"]).g,
                 coloring.hexToRgb(pageSettings[this.dataset.setting]["changedColor"]).b,
-                "#343a40",
+                "#111111",
                 "#f8f9fa"
             );
             document.documentElement.style.setProperty(pageSettings[this.dataset.setting]["rootname"], this.value);
@@ -120,10 +129,10 @@ $(document).ready(function () {
                     break;
                 case "--primary":
                     document.documentElement.style.setProperty("--light", brightness);
-                    if (brightness == "#343a40") {
+                    if (brightness == "#111111") {
                         document.documentElement.style.setProperty("--gray-dark", "#f8f9fa");
                     } else {
-                        document.documentElement.style.setProperty("--gray-dark", "#343a40");
+                        document.documentElement.style.setProperty("--gray-dark", "#111111");
                     }
                     break;
             }
@@ -135,6 +144,11 @@ $(document).ready(function () {
             pageSettings[setting]["color"] = pageSettings[setting]["changedColor"];
             cookie.set(setting, pageSettings[setting]["color"], 2100);
         }
+
+        messageBox.addClass("play").text("Erfolgreich gespeichert!");
+        setTimeout(function () {
+            messageBox.removeClass("play");
+        }, 5100);
     });
 
     $('a[href^="#"]:not([data-toggle="collapse"])').on('click', function (e) {
@@ -163,7 +177,7 @@ $(document).ready(function () {
             $currentTarget.prev().addClass("show");
 
             // Reset every input fields if pressed target is not input field from target
-            $("input.form-control").each(function () {
+            $("input.form-control, textarea.form-control").each(function () {
                 $(this).val("");
             });
         }

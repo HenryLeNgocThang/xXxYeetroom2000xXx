@@ -22,12 +22,23 @@
                 </div>
             </div>
             <div class="col-12 post-content">
-                @{ if (post.Link != "")
-                                    {
-                    <img data-src="@post.Link" alt="Bild" /> }
-                                    if (post.Eintrag != "")
-                                    {
-                    <p> @post.Eintrag </p> } }
+                @{
+                    if (post.Link != "")
+                    {
+                        if (post.Link.Contains("youtube"))
+                        {
+                            <iframe width="850" height="510" src="@post.Link" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        } else
+                        {
+                            <img data-src="@post.Link" alt="Bild" />
+                        }
+                    }
+
+                    if (post.Eintrag != "")
+                    {
+                        <p> @post.Eintrag </p>
+                    }
+                }
             </div>
             <div class="col-12 create-command">
                 <form asp-action="CreateKommentar">
@@ -35,7 +46,6 @@
                         <input class="form-control" asp-for="Verfasser" placeholder="Name" />
                         <textarea class="form-control" rows="4" cols="50" asp-for="Eintrag" placeholder="Kommentar" required></textarea>
                         <input class="hide hidden" asp-for="Post_ID" value="@post.ID" />
-                        <!--<input class="btn btn-primary form-submit" type="submit" value="Kommentieren" />-->
                         <button class="btn btn-primary form-submit" type="submit">
                             <i class="fa fa-comment-o" aria-hidden="true"></i> Kommentieren
                         </button>

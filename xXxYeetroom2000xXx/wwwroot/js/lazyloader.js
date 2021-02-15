@@ -11,6 +11,7 @@ module.exports = {
                         if (mutation.type == "attributes") {
                             for (var i = 0; i < images.length; i++) {
                                 downloadImage.src = images[i].dataset.src;
+
                             }
                             
                             for (var i = 0; i < lazyloadElements.length; i++) {
@@ -63,7 +64,12 @@ module.exports = {
         downloadImage.onload = function () {
             for (var i = 0; i < images.length; i++) {
                 if (images[i].dataset.load) {
-                    images[i].src = images[i].dataset.src;
+                    if (images[i].dataset.src.indexOf("https://") != -1 || images[i].dataset.src.indexOf("https://") != -1) {
+                        images[i].src = images[i].dataset.src;
+                    } else {
+                        images[i].src = "";
+                    }
+                    
                     images.splice(i, 1);
                 }
             }
