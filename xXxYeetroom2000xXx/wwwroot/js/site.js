@@ -6,6 +6,13 @@ import coloring from "../js/coloring";
 import urlvalidator from "../js/urlvalidator";
 import interact from "interactjs";
 
+if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+    window.location = 'microsoft-edge:' + window.location;
+    setTimeout(function () {
+        window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+    }, 1);
+}
+
 $(document).ready(function () {
     // Good luck have fun :^)
 
