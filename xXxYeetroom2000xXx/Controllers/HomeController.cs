@@ -23,8 +23,9 @@ namespace xXxYeetroom2000xXx.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index() // Methodenname == Viewname
         {
+            // ViewBag == beutel für Daten | ViewBag ist nur für "Index"
             ViewBag.Posts = sortedPosts(_db.Post.ToList<Post>());
             ViewBag.Kommentare = _db.Kommentar.ToList<Kommentar>();
 
