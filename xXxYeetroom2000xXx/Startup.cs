@@ -15,18 +15,27 @@ namespace xXxYeetroom2000xXx
 {
     public class Startup
     {
+        /// <summary>
+        ///  Creates the app's pipeline(mechanism by which http requests are processed through the middlewares(software components which process and manipulate the requests) and configure the app's services .
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Represents a set of key/value application configuration properties.
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// This method gets called in the initializing phase of the application. Use this method to add and configure services to the container.
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
             services.AddDbContext<YeetroomContext>(options =>
             options.UseMySQL(Configuration.GetConnectionString("xXxYeetroom2000xXx"),
             MySQLOptionsAction: MySQLDbContextOptionsExtensions =>
@@ -36,7 +45,11 @@ namespace xXxYeetroom2000xXx
             ));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called in the initializing phase of the application. It configures the HTTP request pipeline(e.g. registers the middlewares).
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -46,12 +59,12 @@ namespace xXxYeetroom2000xXx
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();
