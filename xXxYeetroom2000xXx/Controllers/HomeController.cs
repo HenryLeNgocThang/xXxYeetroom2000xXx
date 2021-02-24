@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using xXxYeetroom2000xXx.Models;
 using xXxYeetroom2000xXx.Data;
+using System.Text.RegularExpressions;
 
 namespace xXxYeetroom2000xXx.Controllers
 {
@@ -69,7 +70,11 @@ namespace xXxYeetroom2000xXx.Controllers
                 if(post.Link == null)
                 {
                     post.Link = "";
+                } else
+                {
+                    post.Link = ConvertYoutubeLinkToEmbeddedLink(post.Link);
                 }
+
                 if(post.Eintrag == null)
                 {
                     post.Eintrag = "";
@@ -109,6 +114,37 @@ namespace xXxYeetroom2000xXx.Controllers
             }
 
             return sortedPosts;
+        }
+
+        private string ConvertYoutubeLinkToEmbeddedLink(string uri)
+        {
+            string YoutubeLinkRegex = "(?:.+?)?(?:\\/v\\/|watch\\/|\\?v=|\\&v=|youtu\\.be\\/|\\/v=|^youtu\\.be\\/)([a-zA-Z0-9_-]{11})+";
+            Regex regexExtractId = new Regex(YoutubeLinkRegex, RegexOptions.Compiled);
+            string[] validAuthorities = { "youtube.com", "www.youtube.com", "youtu.be", "www.youtu.be" };
+
+            try
+            {
+                string authority = new UriBuilder(uri).Uri.Authority.ToLower();
+                string embedLink = "https://www.youtube.com/embed/";
+
+                // Check if the url is a youtube url
+                if (validAuthorities.Contains(authority))
+                {
+                    // Extract the id
+                    var regRes = regexExtractId.Match(uri);
+                    if (regRes.Success)
+                    {
+                        // Return new embed link
+                        return embedLink + regRes.Groups[1].Value;
+                    }
+                } else
+                {
+                    return uri;
+                }
+            }
+            catch { }
+
+            return null;
         }
     }
 }

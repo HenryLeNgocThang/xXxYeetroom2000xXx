@@ -15,7 +15,6 @@ if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
 
 $(document).ready(function () {
     // Good luck have fun :^)
-
     var saveButton = $("#saveSettings");
     var messageBox = $("#message-box");
 
